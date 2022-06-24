@@ -3,4 +3,12 @@ import Navbar from './Navbar/Navbar';
 import SearchBar from './SearchBar/SearchBar';
 import searchResults from './SearchResults/SearchResults';
 import CreateRoutes from './Routes/Routes';
-export { Card, Navbar, SearchBar, searchResults, CreateRoutes };
+import ResultContainer from './ResultContainer/ResultContainer';
+export {
+  Card,
+  Navbar,
+  SearchBar,
+  searchResults,
+  CreateRoutes,
+  ResultContainer,
+};

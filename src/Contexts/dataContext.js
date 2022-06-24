@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState, createContext, useEffect } from 'react';
+import React, { useState, createContext } from 'react';
 export const DataContext = createContext();
 const axiosClient = axios.create({ baseURL: `https://api.github.com` });
 const DataProvider = ({ children }) => {
