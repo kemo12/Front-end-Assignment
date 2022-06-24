@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Compare, Erorr, Search } from '../../Pages';
+import { Loadable } from './../Loadable/Loadable';
+const Search = Loadable(lazy(() => import('../../Pages/Search/Search')));
+const Compare = Loadable(lazy(() => import('../../Pages/Compare/Compare')));
+const Error = Loadable(lazy(() => import('../../Pages/Error/Error')));
 
 const CreateRoutes = () => (
   <Router>
     <Routes>
       <Route exact path="/" element={<Search />}></Route>
       <Route exact path="/compare" element={<Compare />}></Route>
-      <Route path="*" element={<Erorr />}></Route>
+      <Route path="*" element={<Error />}></Route>
     </Routes>
   </Router>
 );
