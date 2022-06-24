@@ -5,6 +5,7 @@ const axiosClient = axios.create({ baseURL: `https://api.github.com` });
 const DataProvider = ({ children }) => {
   const [comparedRepos, setComparedRepos] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
+  const [didSearchDone, setDidSearchDone] = useState(true);
   const [search, setSearch] = useState('');
 
   return (
@@ -17,6 +18,8 @@ const DataProvider = ({ children }) => {
         search,
         setSearch,
         axiosClient,
+        didSearchDone,
+        setDidSearchDone,
       }}
     >
       {children}

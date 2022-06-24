@@ -1,19 +1,23 @@
-import React, { lazy, useContext } from 'react';
+import React, { useContext } from 'react';
 import { DataContext } from '../../Contexts/dataContext';
-import { Loadable } from '../Loadable/Loadable';
+import Loading from '../Loadable/loading';
+import { ResultContainer } from './../index';
 import './SearchResults.css';
-const Results = Loadable(
-  lazy(() => import('./../ResultContainer/ResultContainer'))
-);
-
 const SearchResults = () => {
-  const { searchResults } = useContext(DataContext);
-  return searchResults.length === 0 ? (
-    <div className="noResult"></div>
-  ) : (
+  const { didSearchDone, searchResults, search } = useContext(DataContext);
+  return didSearchDone ? (
     <div className="resultContainer">
-      <Results />
+      {
+        // eslint-disable-next-line eqeqeq
+        searchResults.length === 0 || search == '' ? (
+          <div className="beforeSearch">search about some thing !</div>
+        ) : (
+          <ResultContainer />
+        )
+      }
     </div>
+  ) : (
+    <Loading />
   );
 };
 

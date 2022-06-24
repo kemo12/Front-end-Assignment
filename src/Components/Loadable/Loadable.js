@@ -1,23 +1,9 @@
 import { Suspense } from 'react';
 import './Loadable.css';
+import Loading from './loading';
 export const Loadable = (Component) => (props) => {
   return (
-    <Suspense
-      fallback={
-        <div className="loaderContainer">
-          <div className="lds-roller">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-      }
-    >
+    <Suspense fallback={<Loading />}>
       <Component {...props} />
     </Suspense>
   );
