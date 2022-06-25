@@ -25,7 +25,9 @@ const SearchBar = () => {
           value={search}
           placeholder="Search.."
           name="search"
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
         />
         <button type="submit" onClick={handleSearch}>
           <i className="fa fa-search"></i>
