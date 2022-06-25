@@ -26,15 +26,25 @@
   font-size: 12px;
   color: #000000;
 }
-.itemDetails button {
+.addButton {
   width: 80px;
   border-radius: 5px;
   background-color: #b9c1cf;
   color: #000;
   border: #fff;
   height: 30px;
+  margin-bottom: 2px;
 }
-.itemDetails button:hover {
+.addButton:hover {
   background-color: #365997;
   color: #fff;
+}
+.disable {
+  width: 80px;
+  border-radius: 5px;
+  color: #000;
+  border: #fff;
+  height: 30px;
+  margin-bottom: 2px;
+  background-color: #687488;
 }
