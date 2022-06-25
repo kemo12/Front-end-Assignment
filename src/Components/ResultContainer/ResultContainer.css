@@ -20,8 +20,21 @@
 }
 .itemDetails {
   display: flex;
+  justify-content: space-between;
 }
 .itemDetails span {
   font-size: 12px;
   color: #000000;
+}
+.itemDetails button {
+  width: 80px;
+  border-radius: 5px;
+  background-color: #b9c1cf;
+  color: #000;
+  border: #fff;
+  height: 30px;
+}
+.itemDetails button:hover {
+  background-color: #365997;
+  color: #fff;
 }

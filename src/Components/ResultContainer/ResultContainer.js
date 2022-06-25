@@ -2,8 +2,14 @@ import React, { useContext } from 'react';
 import { DataContext } from '../../Contexts/dataContext';
 import './ResultContainer.css';
 const ResultsContainer = () => {
-  const { searchResults } = useContext(DataContext);
-  console.log(searchResults);
+  const { searchResults, comparedRepos, setComparedRepos } =
+    useContext(DataContext);
+  const handleAddToComparsion = (e) => {
+    let addElement = searchResults.filter(
+      (element, index) => e.target.value == index
+    );
+    setComparedRepos([...comparedRepos, addElement]);
+  };
   return (
     <>
       {searchResults.map((element, index) => {
@@ -20,6 +26,9 @@ const ResultsContainer = () => {
                 <b>descrpiton:</b>
                 {element.description}
               </span>
+              <button value={index} onClick={handleAddToComparsion}>
+                Add
+              </button>
             </div>
           </div>
         );
